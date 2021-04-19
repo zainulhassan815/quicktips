@@ -46,6 +46,7 @@ body {
     color: var(--light-color);
     background-color: var(--black-700);
     overflow-x: hidden;
+    width: 100%;
 }
 
 ul {

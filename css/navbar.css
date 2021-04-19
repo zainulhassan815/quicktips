@@ -66,22 +66,16 @@
     display: none;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
     width: 50px;
     height: 50px;
     border-radius: 50%;
     background-color: var(--black-900);
-    padding: .5rem .8rem;
-    gap: 5px;
     cursor: pointer;
     transition: all ease-in .1s;
 }
 
-.burger-line {
-    display: block;
-    height: 2px;
-    width: 100%;
-    background-color: var(--light-color);
+.hamburger img {
+    margin: 0;
 }
 
 .hamburger:hover, .hamburger:focus {
@@ -113,7 +107,7 @@
     }
 
     .hamburger {
-        display: flex;
+        display: inline-flex;
     }
 
 }
