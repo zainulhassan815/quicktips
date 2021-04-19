@@ -15,5 +15,5 @@
 
 ## ✍️ Authors <a name = "authors"></a>
 
-- [@zainulhassan](https://github.com/zainulhassan) - Idea & Initial work
+- [@zainulhassan](https://github.com/zainulhassan815/) - Idea & Initial work
 
