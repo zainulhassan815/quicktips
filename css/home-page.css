@@ -154,7 +154,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0 2rem;
+    gap: 2rem 2rem;
 }
 
 .social-contact-icon {
