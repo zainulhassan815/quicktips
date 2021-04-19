@@ -1,4 +1,5 @@
 window.onload = function () {
+
     const YOUTUBE_CHANNEL = 'https://www.youtube.com/c/QuickTipsbyzain';
 
     // --------------------------------------------------
@@ -47,22 +48,28 @@ window.onload = function () {
             removeUnderline();
             underlines[i].classList.add('underline');
             homeFab.click();
+
             if (link.innerText == 'Home') {
+
                 HOME_PAGE.classList.remove('inactive-page');
                 VIDEO_PAGE.classList.remove('current-page');
                 newsletterFab.style.height = "50px";
                 newsletterFab.style.width = "50px";
-                document.title = "QuickTips | Home"
+                document.title = "QuickTips | Home";
+
             } else if (link.innerText == 'Videos') {
+
                 HOME_PAGE.classList.add('inactive-page');
                 VIDEO_PAGE.classList.add('current-page');
                 newsletterFab.style.height = "0px";
                 newsletterFab.style.width = "0px";
-                document.title = "QuickTips | Videos"
+                document.title = "QuickTips | Videos";
+
             } else {
                 // Extensions Button is clicked
-                document.title = "QuickTips | Extensions"
+                document.title = "QuickTips | Extensions";
             }
+
             if (NAVBAR.classList.contains('active')) {
                 hamburger.click();
             }
@@ -115,5 +122,4 @@ window.onload = function () {
     }
 
     fetchRecords();
-
 }

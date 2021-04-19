@@ -1,4 +1,9 @@
 
+.home {
+    width: 100%;
+    overflow: hidden;
+}
+
 .current-page {
     display: block;
     transform: translate(100%,0);
@@ -123,6 +128,11 @@
 .about {
     min-height: 70vh;
     padding: 6rem 0;
+}
+
+.about .ninja {
+    display: inline-block;
+    height: var(--h2-font-size);
 }
 
 .about-container {
