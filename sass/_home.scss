@@ -1,0 +1,145 @@
+.home {
+    width: 100%;
+    overflow: hidden;
+
+    &.current-page {
+        display: block;
+        transform: translate(100%,0);
+    }
+    
+    &.inactive-page {
+        display: none;
+    }
+}
+
+.header {
+    @include centeredflex(row);
+    width: 100%;
+    min-height: 90vh;
+    gap: 2rem 0;
+
+    h1 {
+        max-width: 20ch;
+    }
+}
+
+.info {
+    min-height: 40vh;
+    background-color: $black900;
+    width: 100%;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit,minmax(360px,1fr));
+
+    .info-card {
+        padding: 2rem 5rem;
+        @include centeredflex(column);
+        text-align: center;
+        gap: 1rem 0;
+        width: 100%;
+        flex-wrap: wrap;
+        font-weight: 500;
+
+        h3 {
+            margin: 0;
+        }
+    }
+}
+
+.developers {
+    min-height: 90vh;
+    padding: 6rem 0;
+    gap: 2rem 0;
+
+    .comments-container {
+        width: 100%;
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        grid-template-columns: repeat(auto-fit,minmax(500px,1fr));
+        grid-template-rows: repeat(auto-fit,minmax(90px,1fr));
+        gap: 2rem 2rem;
+
+        .comment {
+            @include centeredflex(row);
+
+            img {
+                object-fit: contain;
+                min-width: 300px;
+                border-radius: .6rem;
+                box-shadow: 1px 1px 5px rgba(0, 0, 0, .2);
+                max-width: 90vw;
+            }
+        }
+    }
+}
+
+.newsletter {
+    min-height: 70vh;
+
+    .letter-container {
+        @include centeredflex(row);
+        gap: 3rem 5rem;
+    }
+
+    .email-box {
+        display: flex;
+        gap: 1rem 0;
+        flex-direction: column;
+    }
+
+    .textbox {
+        border-radius: var(--border-radius);
+        background-color: var(--black-700);
+        font-weight: 600;
+        width: 100%;
+    }
+
+    .input-container {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 1rem .5rem;
+    }
+
+    input[type="email"] {
+        background-color: $black700;
+    }
+}
+
+
+.about {
+    min-height: 70vh;
+    padding: 6rem 0;
+
+    .ninja {
+        display: inline-block;
+        height: var(--h2-font-size);
+    }
+
+    .about-container {
+        @include centeredflex(row);
+        gap: 3rem 5rem;
+    }
+}
+
+.contact {
+    flex-direction: column;
+    gap: 3rem 2rem;
+    min-height: 30vh;
+
+    .contact-container {
+        @include centeredflex(row);
+        gap: 2rem 2rem;
+    }
+}
+
+.social-contact-icon {
+    cursor: pointer;
+    transition: all ease-in .1s;
+
+    &:hover {
+        transform: scale(1.2,1.2);
+    }
+}

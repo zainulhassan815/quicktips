@@ -1,0 +1,113 @@
+.videos {
+    display: none;
+    transition: all ease-in .3s;
+
+    &.current-page {
+        display: block;
+        transform: translate(0,0);
+    }
+
+    &.inactive-page {
+        display: none;
+    }
+
+    .video-header {
+        min-height: 25vh;
+        padding: 3rem 0;
+    }
+}
+
+// Video Container
+
+.video-container {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fill,minmax(345px,1fr));
+    gap: 2rem 2rem;
+}
+
+// Video Card
+
+.video {
+    @include centeredflex(column);
+    width: 100%;
+    overflow: hidden;
+    border-radius: $borderRadius;
+    box-shadow: 1px 1px 5px $shadowColor;
+    background-color: $black900;
+    cursor: pointer;
+    transition: all ease-in .2s;
+
+    &:hover,
+    &:focus {
+        transform: rotate(-1deg) scale(1.05,1.05);
+        box-shadow: 3px 5px 10px $shadowColor;
+    }
+
+    .video-thumbnail{
+        width: 100%;
+        height: 0;
+        opacity: 0;
+        object-fit: cover;
+        transition: all ease-in 1s;
+
+        &.loaded {
+            height: auto;
+            opacity: 1;
+        }
+    }
+
+    .placeholder {
+        @extend .video-thumbnail;
+        opacity: 1;
+        height: auto;
+    }
+
+    .video-title-container {
+        width: 100%;
+        padding: 1rem;
+        overflow: hidden;
+        background-color: $black700;
+
+        h4 {
+            min-height: calc((var(--h4-font-size) * 1.3) * 3);
+            max-height: calc((var(--h4-font-size) * 1.3) * 3);
+            max-width: 30ch;
+            overflow: hidden;
+        }
+    }
+
+    .date {
+        display: block;
+        font-size: var(--subtitle-font-size);
+        font-weight: 60;
+        text-align: end;
+    }
+}
+
+// Featured Video
+
+.featured-video {
+    align-items: flex-start;
+    padding: 3rem 0;
+    flex-direction: row;
+    gap: 1rem 2rem;
+    min-height: 50vh;
+
+    .date {
+        text-align: start;
+    }
+
+    .embed-container { 
+        width: 100%;
+        height: calc(50vh);
+        overflow: hidden;
+        border-radius: var(--border-radius);
+    }
+
+    iframe {
+        height: 100%;
+        width: 100%;
+    }
+}

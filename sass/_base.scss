@@ -1,4 +1,6 @@
-/* Remove Default Styles */
+@import './variables';
+@import './mixins';
+
 * {
     margin: 0;
     padding: 0;
@@ -7,44 +9,33 @@
     scroll-behavior: smooth;
 }
 
-:root {
-    --primary-blue: #29b6f6;
-    --secondary-blue: #03a9f4;
-    --black-900 : #1a1a1a;
-    --black-700 : #141414;
-    --max-width : 1100px;
-    --navbar-color : var(--black-900);
-    --h1-font-size : 4rem;
-    --h2-font-size : 3rem;
-    --h3-font-size : 2rem;
-    --h4-font-size : 1.5rem;
-    --subtitle-font-size : 1rem;
-    --light-color : #fff;
-    --icon-height : 30px;
-    --large-icon-height : 50px;
-    --border-radius : 5px;
-    --dark-blue : #2196f3;
-    --shadow-color : rgba(0,0,0,.8);
-    --tagline-font-size : 1.5rem;
-    --paragragh-font-size : 1.1rem;
-    --input-hint-color: rgba(255,255,255,.6);
-    --fab-margin: 40px;
-    --fab-space-base : 2.5;
-    --fab-space-factor: 1.5;
-}
-
 *:focus {
     outline: none;
 }
 
 ::placeholder {
-    color: var(--input-hint-color);
+    color: $inputHintColor;
     opacity: 1;
 }
 
+:root {
+    --max-width : 1100px;
+    --h1-font-size : 4rem;
+    --h2-font-size : 3rem;
+    --h3-font-size : 2rem;
+    --h4-font-size : 1.5rem;
+    --subtitle-font-size : 1rem;
+    --icon-height : 30px;
+    --large-icon-height : 50px;
+    --border-radius : 5px;
+    --tagline-font-size : 1.5rem;
+    --paragragh-font-size : 1.1rem;
+    --fab-margin: 40px;
+}
+
 body {
-    color: var(--light-color);
-    background-color: var(--black-700);
+    color: $lightColor;
+    background-color: $black700;
     overflow-x: hidden;
     width: 100%;
 }
@@ -99,7 +90,7 @@ p {
 input{
     padding: .8rem 1rem;
     background-color: transparent;
-    color: var(--light-color);
+    color: $lightColor;
     border: none;
     overflow: hidden;
     font-size: var(--paragragh-font-size);
@@ -110,10 +101,7 @@ input:hover ,input:focus {
 } 
 
 section {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    @include centeredflex(column);
 }
 
 .svg {
@@ -134,47 +122,49 @@ section {
 
 .expanded {
     width: 100%;
-    background-color: var(--black-900);
+    background-color: $black900;
 }
 
 /* Styling Buttons */
 
 .btn {
     cursor: pointer;
-    color: var(--light-color);
+    color: $lightColor;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     padding: .5rem 1rem;
     border: none;
-    border-radius: var(--border-radius);
+    border-radius: $borderRadius;
     font-size: var(--paragragh-font-size);
     font-weight: 600;
-}
 
-.secondary-btn {
-    margin: 2rem 0;
-    border: 1px solid var(--primary-blue);
-    background-color: var(--black-700);
-    transition: background-position 0.3s ease-out;
-    background: linear-gradient(to right, var(--dark-blue) 0%, var(--dark-blue) 50%, var(--black-700) 50%, var(--black-700) 100%);
-    background-size: 200% 100%;
-    background-position: 100% 0;
-}
+    &.secondary-btn {
+        margin: 2rem 0;
+        border: 1px solid $primaryBlue;
+        background-color: $black700;
+        transition: background-position 0.3s ease-out;
+        background: linear-gradient(to right, $darkBlue 0%, $darkBlue 50%, $black700 50%, $black700 100%);
+        background-size: 200% 100%;
+        background-position: 100% 0;
+    
+        &:hover,
+        &:focus {
+            background-position: 0 0;
+        }
+    }
 
-.secondary-btn:hover, .secondary-btn:focus {
-    background-position: 0 0;
-}
-
-.primary-btn {
-    background-color: var(--primary-blue);
-    transition: all ease-in .1s;
-}
-
-.primary-btn:hover, .primary-btn:focus {
-    background-color: var(--secondary-blue);
-    box-shadow: 1px 3px 10px var(--shadow-color);
-    transform: scale(1.1,1.1);
+    &.primary-btn {
+        background-color: $primaryBlue;
+        transition: all ease-in .1s;
+    
+        &:hover,
+        &:focus {
+            background-color: $secondaryBlue;
+            box-shadow: 1px 3px 10px $shadowColor;
+            transform: scale(1.1,1.1);
+        }
+    }
 }
 
 /* ------ Icon Classes ------ */
@@ -193,4 +183,37 @@ section {
     width: var(--large-icon-height);
     display: block;
     object-fit: contain;
+}
+
+.fab-nav {
+    position: relative;
+
+    .floating-nav-container {
+        @include centeredflex(row);
+        gap: 1rem 1rem;
+        position: fixed;
+        bottom: var(--fab-margin);
+        right: var(--fab-margin);
+    }
+
+    .fab {
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        background-color: black;
+        @include centeredflex(row);
+        cursor: pointer;
+        box-shadow: 1px 3px 5px var(--shadow-color);
+        transition: all ease .1s;
+        overflow: hidden;
+
+        img {
+            margin: 0;
+        }
+
+        &:hover,
+        &:focus {
+            transform: scale(1.2,1.2);
+        }
+    }
 }
