@@ -65,9 +65,6 @@ window.onload = function () {
                 newsletterFab.style.width = "0px";
                 document.title = "QuickTips | Videos";
 
-            } else {
-                // Extensions Button is clicked
-                document.title = "QuickTips | Extensions";
             }
 
             if (NAVBAR.classList.contains('active')) {
