@@ -85,8 +85,11 @@
 
     .email-box {
         display: flex;
-        gap: 1rem 0;
         flex-direction: column;
+    }
+
+    .email-box > * {
+        margin: 1rem 0;
     }
 
     .textbox {
@@ -97,10 +100,12 @@
     }
 
     .input-container {
-        display: flex;
-        flex-direction: column;
+        @include centeredflex(column);
         align-items: start;
-        gap: 1rem .5rem;
+    }
+
+    .input-container > * {
+        margin: .5rem 0;
     }
 
     input[type="email"] {
@@ -127,15 +132,17 @@
 .contact {
     flex-direction: column;
     gap: 3rem 2rem;
-    min-height: 30vh;
+    min-height: 50vh;
 
     .contact-container {
+        // @include centeredGrid(repeat(4,var(--large-icon-height)));
         @include centeredflex(row);
-        gap: 2rem 2rem;
+        flex-wrap: wrap;
     }
 }
 
 .social-contact-icon {
+    margin: 1rem 1rem;
     cursor: pointer;
     transition: all ease-in .1s;
 

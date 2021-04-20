@@ -190,13 +190,13 @@ section {
 
     .floating-nav-container {
         @include centeredflex(row);
-        gap: 1rem 1rem;
         position: fixed;
         bottom: var(--fab-margin);
         right: var(--fab-margin);
     }
 
     .fab {
+        margin: .5rem .5rem;
         height: 50px;
         width: 50px;
         border-radius: 50%;

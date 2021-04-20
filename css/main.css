@@ -239,13 +239,13 @@ section {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  gap: 1rem 1rem;
   position: fixed;
   bottom: var(--fab-margin);
   right: var(--fab-margin);
 }
 
 .fab-nav .fab {
+  margin: .5rem .5rem;
   height: 50px;
   width: 50px;
   border-radius: 50%;
@@ -521,13 +521,13 @@ section {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  gap: 1rem 1rem;
   position: fixed;
   bottom: var(--fab-margin);
   right: var(--fab-margin);
 }
 
 .fab-nav .fab {
+  margin: .5rem .5rem;
   height: 50px;
   width: 50px;
   border-radius: 50%;
@@ -915,11 +915,14 @@ section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 1rem 0;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+.newsletter .email-box > * {
+  margin: 1rem 0;
 }
 
 .newsletter .textbox {
@@ -933,6 +936,12 @@ section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -940,7 +949,10 @@ section {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: start;
-  gap: 1rem .5rem;
+}
+
+.newsletter .input-container > * {
+  margin: .5rem 0;
 }
 
 .newsletter input[type="email"] {
@@ -980,7 +992,7 @@ section {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 3rem 2rem;
-  min-height: 30vh;
+  min-height: 50vh;
 }
 
 .contact .contact-container {
@@ -997,10 +1009,12 @@ section {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  gap: 2rem 2rem;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .social-contact-icon {
+  margin: 1rem 1rem;
   cursor: pointer;
   -webkit-transition: all ease-in .1s;
   transition: all ease-in .1s;
@@ -1176,7 +1190,7 @@ section {
     --tagline-font-size: 1.2rem;
     --icon-height: 28px;
     --large-icon-height: 45px;
-    --fab-margin: 30px;
+    --fab-margin: 20px;
   }
   .letter-container .mail-box-image {
     display: none;
